@@ -24,16 +24,15 @@ export default async function Home() {
                   <p>Loading Preview Data...</p>
                </div>
             }
-            children={undefined}
-         ></PreviewSuspense>
+         >
+            <></>
+         </PreviewSuspense>
       );
    }
 
    const Posts = await client.fetch(query);
 
    console.log(Posts);
-
-
 
    return (
       <>
