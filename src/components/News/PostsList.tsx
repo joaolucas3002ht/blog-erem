@@ -1,13 +1,11 @@
 'use client';
 
 import { Card } from '../Card';
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
 import { ArroyPuth } from './ArroyPuth';
 import { FetchPosts } from '../../../utils/FetchPosts';
-import { BiArrowBack, BiRightArrowAlt } from 'react-icons/bi';
-import router from 'next/router';
 import { CardLoading } from '../CardLoading';
 
 // interface PostProps {

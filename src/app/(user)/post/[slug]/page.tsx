@@ -19,7 +19,7 @@ interface PostProps {
    };
 }
 
-interface PostProps {
+interface PostFetchProps {
    _createdAt: string;
    _id: string;
    _rev: string;
@@ -61,7 +61,7 @@ export default async function Post({ params }: PostProps) {
    const query = groq`
    *[_type == "post" && slug.current == "${params.slug}"][0]{...}`;
 
-   const value: PostProps = await client.fetch(query);
+   const value: PostFetchProps = await client.fetch(query);
 
    const { publishedAt, mainImage, title, body, ...rest } = value;
 
