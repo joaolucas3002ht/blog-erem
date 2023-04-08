@@ -35,10 +35,10 @@ export async function CarouselPosts() {
    return (
       <div className="w-full mx-auto">
          <div className="overflow-x-scroll flex gap-2">
-            {Posts.map((e) => (
+            {Posts.map((e, i) => (
                <div>
                   <Card
-                     key={e.slug.current}
+                     key={i}
                      title={e.title}
                      slug={e.slug.current}
                      publishedAt={e.publishedAt}
