@@ -1,12 +1,18 @@
 import { ImageCover } from '@/components/ImageCover';
+// import { Test } from '@/components/Test';
+import PortableTextRender from '@/components/sanity/PortableTextRender';
 import dayjs from 'dayjs';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
+import Link from 'next/link';
 import { client } from '../../../../../lib/sanity.client';
 import urlFor from '../../../../../lib/urlFor';
 import { dateFormat } from '../../../../../utils/dateFormat';
+import { BiArrowBack } from 'react-icons/bi';
+import { useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
+import { ButtonBack } from '@/components/ButtonBack';
 
-// 'use client'
 interface PostProps {
    params: {
       slug: string;
@@ -52,21 +58,21 @@ interface PostProps {
 [];
 
 export default async function Post({ params }: PostProps) {
-   console.log(params.slug);
-
    const query = groq`
    *[_type == "post" && slug.current == "${params.slug}"][0]{...}`;
 
    const value: PostProps = await client.fetch(query);
 
-   const { publishedAt, mainImage, title, ...rest } = value;
+   const { publishedAt, mainImage, title, body, ...rest } = value;
 
    const date = dateFormat(publishedAt);
 
-   const cal = (48 * 56.25) / 100;
-
    return (
-      <main className="min-h-screen h-full  max-w-[49rem] w-full text-slate-100 m-auto flex flex-col gap-4 py-4 px-[min(3%_,_1rem)]">
+      <main className="min-h-screen h-full max-w-[49rem] w-full text-black dark:text-slate-100  m-auto flex flex-col gap-4 py-4 px-[min(3%_,_1rem)]">
+         {/* <div className=' flex flex-col gap-4 max-w-7xl m-auto '> */}
+         {/* @ts -expect-error */}
+         <ButtonBack/>
+
          {mainImage ? (
             <div
                className={`w-[min(100vw_,_100%)] h-[min(56.25vw_,_27rem)] relative mx-auto rounded-2xl overflow-hidden`}
@@ -83,8 +89,13 @@ export default async function Post({ params }: PostProps) {
          )}
 
          <section className="">
-            <h1 className="text-4xl text-slate-50 capitalize">{title}</h1>
+            <h1 className="text-4xl font-semibold text-slate-50 capitalize">
+               {title}
+            </h1>
             <p>{date}</p>
+            <div className="relative z-0 py-10">
+               <PortableTextRender content={body} />
+            </div>
          </section>
       </main>
    );

@@ -5,7 +5,9 @@ import { ReactNode } from 'react';
 interface RootLayoutProps {
    children: ReactNode;
 }
- {/* @ ts-expect-error Server Component */}
+{
+   /* @ ts-expect-error Server Component */
+}
 
 export default function RootLayout({ children }: RootLayoutProps) {
    return (

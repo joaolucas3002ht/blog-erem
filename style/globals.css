@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.backdrop-blur-res {
+  @apply  backdrop-blur-[2px] bg-blue-900
+}
