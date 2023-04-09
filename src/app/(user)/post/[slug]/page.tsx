@@ -1,16 +1,10 @@
-import { ImageCover } from '@/components/ImageCover';
 // import { Test } from '@/components/Test';
 import PortableTextRender from '@/components/sanity/PortableTextRender';
-import dayjs from 'dayjs';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
-import Link from 'next/link';
 import { client } from '../../../../../lib/sanity.client';
 import urlFor from '../../../../../lib/urlFor';
 import { dateFormat } from '../../../../../utils/dateFormat';
-import { BiArrowBack } from 'react-icons/bi';
-import { useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
 import { ButtonBack } from '@/components/ButtonBack';
 
 interface PostProps {

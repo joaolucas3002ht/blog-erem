@@ -44,22 +44,22 @@ export default function PortableTextRender({
             },
             block: {
                h1: ({ children }: any): any => (
-                  <h1 className="text-5xl pb-3 font-medium break-words">
+                  <h1 className="text-5xl pb-3 font-mono font-medium break-words">
                      {children}
                   </h1>
                ),
                h2: ({ children }: any): any => (
-                  <h2 className="text-4xl pb-3 font-medium break-words">
+                  <h2 className="text-4xl pb-3 font-mono font-medium break-words">
                      {children}
                   </h2>
                ),
                h3: ({ children }: any): any => (
-                  <h3 className="text-3xl pb-3 font-medium break-words">
+                  <h3 className="text-3xl pb-3 font-mono font-medium break-words">
                      {children}
                   </h3>
                ),
                h4: ({ children }: any): any => (
-                  <h4 className="text-2xl pb-3 font-medium break-words">
+                  <h4 className="text-2xl pb-3 font-mono font-medium break-words">
                      {children}
                   </h4>
                ),
@@ -69,7 +69,7 @@ export default function PortableTextRender({
                   </blockquote>
                ),
                normal: ({ children }: any): any => (
-                  <p className="pb-1 text-base l">{children}</p>
+                  <p className="pb-1 text-base ">{children}</p>
                ),
             },
             marks: {

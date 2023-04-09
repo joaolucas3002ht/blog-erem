@@ -21,7 +21,7 @@ export default function Login() {
 
    return (
       <div className="w-full flex flex-col gap-8 max-w-3xl m-auto relative h-full px-[min(4%_,_2rem)] py-12">
-         <h1 className="font-bold text-[clamp(1.875rem,8vw,45px)] text-center text-sky-700">
+         <h1 className="font-bold text-[clamp(1.875rem,8vw,45px)] text-center text-sky-700 font-mono">
             EREM Antonio Inacio
          </h1>
 
@@ -37,7 +37,7 @@ export default function Login() {
          </div>
 
          <section className=' flex flex-col gap-6'>
-           <h2 className="capitalize font-semibold text-3xl text-sky-700">
+           <h2 className="capitalize font-semibold text-3xl text-sky-700  font-mono">
               ultimas postagens
            </h2>
            {/* @ts-expect-error */}
@@ -45,7 +45,7 @@ export default function Login() {
          </section>
 
          <section className=' flex flex-col gap-6'>
-           <h2 className="capitalize font-semibold text-3xl text-sky-700">
+           <h2 className="capitalize font-semibold text-3xl text-sky-700  font-mono">
               Endereço
            </h2>
            <p className="capitalize font-semibold text-lg dark:text-blue-50 flex flex-row gap-2 items-center">

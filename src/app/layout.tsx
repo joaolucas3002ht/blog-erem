@@ -1,11 +1,18 @@
 import '../../style/globals.css';
-import { Roboto } from 'next/font/google';
+import { Roboto, Roboto_Serif, Lora, Roboto_Mono } from 'next/font/google';
 import { ReactNode } from 'react';
 
 const roboto = Roboto({
    weight: ['100', '300', '400', '500', '700', '900'],
    subsets: ['latin'],
    variable: '--font-roboto',
+   display: 'swap',
+});
+
+const robotoMono = Roboto_Mono({
+   weight: ['100', '200', '300', '400', '500', '600', '700'],
+   subsets: ['latin'],
+   variable: '--font-roboto-mono',
    display: 'swap',
 });
 
@@ -20,8 +27,13 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
    return (
-      <html lang="pt-br" className={roboto.className}>
-         <body className='bg-gray-50 dark:bg-[#23272F]'>{children}</body>
+      <html
+         lang="pt-br"
+         className={`${roboto.variable} ${robotoMono.variable}`}
+      >
+         <body className="bg-gray-50 dark:bg-[#23272F] font-primary">
+            {children}
+         </body>
       </html>
    );
 }
