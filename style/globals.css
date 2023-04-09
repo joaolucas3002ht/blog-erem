@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.backdrop-blur-res {
-  @apply  backdrop-blur-[2px] bg-blue-900
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(110, 110, 110, 0.4);
+  border-radius: 14px;
 }

@@ -34,7 +34,7 @@ export async function CarouselPosts() {
 
    return (
       <div className="w-full mx-auto">
-         <div className="overflow-x-scroll flex gap-2">
+         <div className="overflow-x-scroll flex gap-2 ">
             {Posts.map((e, i) => (
                <div key={i}>
                   <Card
