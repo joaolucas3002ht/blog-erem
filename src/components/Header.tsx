@@ -19,7 +19,7 @@ export function Header() {
          <div className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full bg-black bg-opacity-10 dark:bg-opacity-25 shadow-md backdrop-blur-[1px] fixed top-0 left-0 z-10" />
          <header className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full fixed top-0 left-0 z-10 flex items-center justify-center ">
             <nav className="max-w-6xl w-full h-full flex items-center justify-between px-[min(2rem)] relative">
-               <div className="">LOGO</div>
+               <div className="text-white">LOGO</div>
                <SearchHeader />
                <div>
                   <NavMenu />
