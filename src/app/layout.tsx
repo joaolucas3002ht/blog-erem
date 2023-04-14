@@ -30,7 +30,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html
          lang="pt-br"
          className={`${roboto.variable} ${robotoMono.variable}`}
+         
       >
+         <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
          <body className="bg-gray-50 dark:bg-[#23272F] font-primary">
             {children}
          </body>
