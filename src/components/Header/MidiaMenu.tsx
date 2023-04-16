@@ -1,10 +1,8 @@
 import React from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import {
-   IoAt,
    IoLogoFacebook,
    IoLogoInstagram,
-   IoLogoWhatsapp,
 } from 'react-icons/io5';
 
 interface MidiaMenuProps {
@@ -35,8 +33,8 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
             <li>
                <a
                   className="flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-                  href={'https://www.facebook.com/antonio.inacio.52012548'}
                   target={'_blank'}
+                  href={'https://www.facebook.com/antonio.inacio.52012548'}
                >
                   <IoLogoFacebook size={20} /> Facebook
                </a>
