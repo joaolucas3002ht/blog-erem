@@ -25,8 +25,8 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
             <li>
                <a
                   className=" flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-                  target="_blank"
-                  href="https://www.instagram.com/eremantonioinacio/"
+                  target={'_blank'}
+                  href={'https://www.instagram.com/eremantonioinacio/'}
                >
                   <IoLogoInstagram size={20} /> Instagram
                </a>
@@ -35,28 +35,12 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
             <li>
                <a
                   className="flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-                  href="https://www.facebook.com/antonio.inacio.52012548"
-                  target={"_blank"}
+                  href={'https://www.facebook.com/antonio.inacio.52012548'}
+                  target={'_blank'}
                >
                   <IoLogoFacebook size={20} /> Facebook
                </a>
             </li>
-            {/* <li>
-               <a
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-                  href="https://web.whatsapp.com/"
-               >
-                  <IoLogoWhatsapp size={20} /> Whatsapp
-               </a>
-            </li>
-            <li>
-               <a
-                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-                  href="https://mail.google.com/"
-               >
-                  <IoAt size={20} /> E-Mail
-               </a>
-            </li> */}
          </ul>
       </div>
    );
