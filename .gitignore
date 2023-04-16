@@ -16,6 +16,7 @@
 # production
 /build
 /get-news/routes.ts
+/test/
 
 # misc
 .DS_Store
