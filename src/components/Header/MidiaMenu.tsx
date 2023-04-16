@@ -13,7 +13,7 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
    return (
       <div
          className={` ${
-            toggle ? 'h-[144px]' : 'h-0'
+            toggle ? 'h-[72px]' : 'h-0'
          }  w-full transition-all duration-300 bg-white/[35%] overflow-hidden`}
       >
          <ul
