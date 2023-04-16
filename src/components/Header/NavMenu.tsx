@@ -12,7 +12,7 @@ import {
 } from 'react-icons/bi';
 import { HiFolderPlus } from 'react-icons/hi2';
 import { RxShare2 } from 'react-icons/rx';
-// import { MidiaMenu } from './MidiaMenu';
+import { MidiaMenu } from './MidiaMenu';
 
 export function NavMenu() {
    const [Toggle, setToggle] = useState<boolean>(false);
@@ -70,7 +70,7 @@ export function NavMenu() {
                         )}
                         Media
                      </button>
-                     {/* <MidiaMenu toggle={ElementULToggle} /> */}
+                     <MidiaMenu toggle={ElementULToggle} />
                   </li>
                   <li>
                      <a
