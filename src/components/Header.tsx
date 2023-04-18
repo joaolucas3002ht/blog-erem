@@ -29,7 +29,7 @@ export function Header() {
                >
                   <Image
                      src={'/favicon.svg'}
-                     fill
+                     height={80}
                      alt="brasão da EREM Antonio Inacio "
                   />
                </Link>
