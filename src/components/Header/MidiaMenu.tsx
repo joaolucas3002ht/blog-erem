@@ -1,12 +1,19 @@
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io5';
 import { LinkMidiaMenu } from './LinkMidiaMenu';
+import { ReactNode } from 'react';
 
 interface MidiaMenuProps {
    toggle: boolean;
 }
 
+interface LinksValuesProps {
+   children: ReactNode;
+   href: string;
+}
+[];
+
 export function MidiaMenu({ toggle }: MidiaMenuProps) {
-   const LinksValues = [
+   const LinksValues: LinksValuesProps[] = [
       {
          children: (
             <>
@@ -36,7 +43,7 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
             className={` ${toggle ? '' : 'hidden'}
                  w-full flex flex-col justify-center `}
          >
-            {LinksValues?.map(({ children, href }, index) => (
+            {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
                <LinkMidiaMenu href={href} children={children} key={index} />
             ))}
          </ul>
