@@ -45,9 +45,9 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
             className={` ${toggle ? '' : 'hidden'}
                  w-full flex flex-col justify-center `}
          >
-            {/* {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
+            {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
                <LinkMidiaMenu href={href} children={children} key={index} />
-            ))} */}
+            ))}
          </ul>
       </div>
    );
