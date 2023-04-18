@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes, ReactNode } from 'react';
 
 interface LinkMidiaMenuProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-   children?: ReactNode;
+   children: ReactNode;
 }
 
 export function LinkMidiaMenu({ children, href, ...rest }: LinkMidiaMenuProps) {
