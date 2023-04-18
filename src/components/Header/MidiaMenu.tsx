@@ -47,7 +47,7 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
          >
             {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
                <LinkMidiaMenu href={href} key={index}>
-                  {children}
+                  <>{children}</>
                </LinkMidiaMenu>
             ))}
          </ul>
