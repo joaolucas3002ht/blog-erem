@@ -11,7 +11,10 @@ interface ArroyPuthProps {
    currentPage: number;
 }
 
-export function ArroyPuth({ currentPage = 1, pagesLength = 1 }: ArroyPuthProps) {
+export function ArroyPuth({
+   currentPage = 1,
+   pagesLength = 1,
+}: ArroyPuthProps) {
    const router = useRouter();
    const pathname = usePathname();
 

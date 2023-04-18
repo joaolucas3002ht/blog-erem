@@ -32,20 +32,22 @@ export function MidiaMenu({ toggle }: MidiaMenuProps) {
       },
    ];
 
+   const LinksValuesLength = LinksValues.length >= 0 ? LinksValues.length : 0;
+
    return (
       <div
          className={`w-full transition-all duration-300 bg-white/[35%] overflow-hidden `}
          style={{
-            height: `${toggle ? LinksValues.length * 2.25 + 'rem' : '0rem'}`,
+            height: `${toggle ? LinksValuesLength * 2.25 + 'rem' : '0rem'}`,
          }}
       >
          <ul
             className={` ${toggle ? '' : 'hidden'}
                  w-full flex flex-col justify-center `}
          >
-            {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
+            {/* {LinksValues?.map(({ children, href }: LinksValuesProps, index) => (
                <LinkMidiaMenu href={href} children={children} key={index} />
-            ))}
+            ))} */}
          </ul>
       </div>
    );

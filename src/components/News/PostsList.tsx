@@ -73,49 +73,6 @@ interface PostFetchProps {
    params: ReadonlyURLSearchParams;
 }
 
-// async function GetCardPropsLength({
-//    query,
-//    lengthElementPage,
-// }: PostFetchProps) {
-//    const GetQuery = query
-//       ? groq`
-//    *[_type == "post" && title match "**${query}**"].length`
-//       : groq`
-//    *[_type=="post"].length`;
-
-//    const posts: CardProps[] = await client.fetch(GetQuery);
-
-//    const val = Math.ceil([...posts].length / lengthElementPage);
-
-//    return val;
-// }
-
-// async function GetCardPropsSearch({
-//    query,
-//    page = 1,
-//    lengthElementPage,
-// }: PostFetchProps) {
-//    const pageMax = page * lengthElementPage;
-//    const PageMin = (page - 1) * lengthElementPage;
-
-//    const GetQuery = query
-//       ? groq`*[_type=="post" && title match "**${query}**"][${PageMin}...${pageMax}]{
-//       mainImage,
-//       slug,
-//       publishedAt,
-//       title
-//    } | order(publishedAt desc)`
-//       : groq`*[_type=="post"][${PageMin}...${pageMax}]{
-//       mainImage,
-//       slug,
-//       publishedAt,
-//       title
-//    } | order(publishedAt desc)`;
-
-//    const posts: CardProps[] = await client.fetch(GetQuery);
-
-//    return posts;
-// }
 
 export function PostsList() {
    const [Loading, setLoading] = useState<boolean>(false);
@@ -180,3 +137,48 @@ export function PostsList() {
       </div>
    );
 }
+
+
+// async function GetCardPropsLength({
+//    query,
+//    lengthElementPage,
+// }: PostFetchProps) {
+//    const GetQuery = query
+//       ? groq`
+//    *[_type == "post" && title match "**${query}**"].length`
+//       : groq`
+//    *[_type=="post"].length`;
+
+//    const posts: CardProps[] = await client.fetch(GetQuery);
+
+//    const val = Math.ceil([...posts].length / lengthElementPage);
+
+//    return val;
+// }
+
+// async function GetCardPropsSearch({
+//    query,
+//    page = 1,
+//    lengthElementPage,
+// }: PostFetchProps) {
+//    const pageMax = page * lengthElementPage;
+//    const PageMin = (page - 1) * lengthElementPage;
+
+//    const GetQuery = query
+//       ? groq`*[_type=="post" && title match "**${query}**"][${PageMin}...${pageMax}]{
+//       mainImage,
+//       slug,
+//       publishedAt,
+//       title
+//    } | order(publishedAt desc)`
+//       : groq`*[_type=="post"][${PageMin}...${pageMax}]{
+//       mainImage,
+//       slug,
+//       publishedAt,
+//       title
+//    } | order(publishedAt desc)`;
+
+//    const posts: CardProps[] = await client.fetch(GetQuery);
+
+//    return posts;
+// }
