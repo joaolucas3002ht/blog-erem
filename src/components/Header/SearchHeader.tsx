@@ -42,7 +42,7 @@ export function SearchHeader() {
             name="search"
             id="search"
             results={5}
-            className="w-[min(600px,50vw)] h-9 px-2 bg-gray-100 dark:bg-[#23272F]  rounded-full dark:text-white cancel-button"
+            className="w-[min(600px,50vw)] h-9 px-2 bg-gray-100 dark:bg-[hsl(220,15%,20%)]  rounded-full dark:text-white cancel-button"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
          />

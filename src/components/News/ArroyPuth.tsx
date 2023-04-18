@@ -46,7 +46,11 @@ export function ArroyPuth({ currentPage, pagesLength }: ArroyPuthProps) {
          ) : (
             <div className="w-6"> </div>
          )}
-         <div className="w-4 flex justify-center text-lg">{currentPage}</div>
+         {pagesLength > 1 ? (
+            <div className="w-4 flex justify-center text-lg">{currentPage}</div>
+         ) : (
+            <div className="w-6"> </div>
+         )}
          {currentPage < pagesLength ? (
             <button
                className="w-6"

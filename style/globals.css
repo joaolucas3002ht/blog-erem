@@ -22,3 +22,9 @@
   background-color: rgba(110, 110, 110, 0.4);
   border-radius: 14px;
 }
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
