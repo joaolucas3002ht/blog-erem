@@ -13,7 +13,7 @@ export function LinkMidiaMenu({ children, href, ...rest }: LinkMidiaMenuProps) {
             href={href}
             {...rest}
          >
-            {children}
+            <>{children}</>
          </a>
       </>
    );
