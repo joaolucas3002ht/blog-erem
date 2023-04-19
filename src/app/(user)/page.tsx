@@ -21,7 +21,7 @@ export default function Login() {
    const Posts = '';
 
    return (
-      <div className="w-full flex flex-col gap-[clamp(20px,4vw,32px)] max-w-3xl m-auto relative h-full px-[min(4%_,_2rem)] py-12">
+      <div className="w-full flex flex-col gap-[clamp(20px,4vw,32px)] max-w-5xl m-auto relative h-full px-[min(4%_,_2rem)] py-12">
          <h1 className="font-bold text-[clamp(1.875rem,8vw,45px)] text-center text-sky-700 font-mono">
             EREM Antonio Inacio
          </h1>

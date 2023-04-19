@@ -18,9 +18,9 @@ export default function PortableTextRender({
             types: {
                image: ({ value }: any): any => {
                   return (
-                     <div className="relative w-full max-h-[29rem] h-auto m-5 mx-auto flex justify-center">
+                     <div className="relative w-full max-h-[29rem] h-auto m-5 mx-auto flex justify-center ">
                         <Image
-                           className="object-contain max-h-[29rem] h-min w-fit object-center"
+                           className="object-contain max-h-[29rem]  h-min w-fit object-center"
                            alt="Blog Post Image"
                            src={urlFor(value).url()}
                            width={750}

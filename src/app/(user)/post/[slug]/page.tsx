@@ -62,14 +62,14 @@ export default async function Post({ params }: PostProps) {
    const date = dateFormat(publishedAt);
 
    return (
-      <main className="min-h-screen h-full max-w-[49rem] w-full text-black dark:text-slate-100  m-auto flex flex-col gap-4 py-4 px-[min(3%_,_1rem)]">
+      <main className="min-h-screen h-full max-w-5xl w-full text-black dark:text-slate-100  m-auto flex flex-col gap-4 py-4 px-[min(3%_,_1rem)]">
          {/* <div className=' flex flex-col gap-4 max-w-7xl m-auto '> */}
          {/* @ts -expect-error */}
          <ButtonBack/>
 
          {mainImage ? (
             <div
-               className={`w-[min(100vw_,_100%)] h-[min(56.25vw_,_27rem)] relative mx-auto rounded-2xl overflow-hidden`}
+               className={`w-[min(100vw_,_52rem)] h-[min(56.25vw_,_29.25rem)] relative mx-auto rounded-2xl overflow-hidden`}
             >
                <Image
                   src={urlFor(mainImage).url()}

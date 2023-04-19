@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { NavMenu } from './Header/NavMenu';
-import { SearchHeader } from './Header/SearchHeader';
+import { NavMenu } from './NavMenu';
+import { SearchHeader } from './SearchHeader';
 
 export function Header() {
    // await fetch('').catch((e) => console.error(e));
@@ -30,6 +30,7 @@ export function Header() {
                   <Image
                      src={'/favicon.svg'}
                      height={80}
+                     width={80}
                      alt="brasão da EREM Antonio Inacio "
                   />
                </Link>
