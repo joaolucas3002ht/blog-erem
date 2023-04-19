@@ -22,7 +22,7 @@ export const SocialValues: SocialValuesProps[] = [
    {
       name: 'Email',
       icon: <IoMail  />,
-      href: 'mailto:joaolucas3002ht@gmail.com',
+      href: 'mailto:valec.antonioinacio@gmail.com',
    },
    {
       name: 'Telefone',
