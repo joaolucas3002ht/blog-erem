@@ -8,44 +8,6 @@ import { ArroyPuth } from './ArroyPuth';
 import { FetchPosts } from '../../../utils/FetchPosts';
 import { CardLoading } from '../CardLoading';
 
-// interface PostProps {
-//    _createdAt: string;
-//    _id: string;
-//    _rev: string;
-//    _type: string;
-//    _updatedAt: string;
-//    body: {
-//       _key: string;
-//       _type: string;
-//       children: {
-//          _key: string;
-//          _type: string;
-//          marks: string[];
-//          text: string;
-//       };
-//       level: number;
-//       listItem: string;
-//       markDefs: never[];
-//       style: string;
-//    }[];
-//    mainImage: {
-//       _type: string;
-//       asset: {
-//          _ref: string;
-//          _type: string;
-//       };
-//       crop?: any;
-//       hotspot?: any;
-//    };
-//    publishedAt: string;
-//    slug: {
-//       _type: string;
-//       current: string;
-//    };
-//    title: string;
-// }
-// [];
-
 interface CardProps {
    title: string;
    publishedAt: Date;
@@ -139,46 +101,41 @@ export function PostsList() {
 }
 
 
-// async function GetCardPropsLength({
-//    query,
-//    lengthElementPage,
-// }: PostFetchProps) {
-//    const GetQuery = query
-//       ? groq`
-//    *[_type == "post" && title match "**${query}**"].length`
-//       : groq`
-//    *[_type=="post"].length`;
-
-//    const posts: CardProps[] = await client.fetch(GetQuery);
-
-//    const val = Math.ceil([...posts].length / lengthElementPage);
-
-//    return val;
+// interface PostProps {
+//    _createdAt: string;
+//    _id: string;
+//    _rev: string;
+//    _type: string;
+//    _updatedAt: string;
+//    body: {
+//       _key: string;
+//       _type: string;
+//       children: {
+//          _key: string;
+//          _type: string;
+//          marks: string[];
+//          text: string;
+//       };
+//       level: number;
+//       listItem: string;
+//       markDefs: never[];
+//       style: string;
+//    }[];
+//    mainImage: {
+//       _type: string;
+//       asset: {
+//          _ref: string;
+//          _type: string;
+//       };
+//       crop?: any;
+//       hotspot?: any;
+//    };
+//    publishedAt: string;
+//    slug: {
+//       _type: string;
+//       current: string;
+//    };
+//    title: string;
 // }
+// [];
 
-// async function GetCardPropsSearch({
-//    query,
-//    page = 1,
-//    lengthElementPage,
-// }: PostFetchProps) {
-//    const pageMax = page * lengthElementPage;
-//    const PageMin = (page - 1) * lengthElementPage;
-
-//    const GetQuery = query
-//       ? groq`*[_type=="post" && title match "**${query}**"][${PageMin}...${pageMax}]{
-//       mainImage,
-//       slug,
-//       publishedAt,
-//       title
-//    } | order(publishedAt desc)`
-//       : groq`*[_type=="post"][${PageMin}...${pageMax}]{
-//       mainImage,
-//       slug,
-//       publishedAt,
-//       title
-//    } | order(publishedAt desc)`;
-
-//    const posts: CardProps[] = await client.fetch(GetQuery);
-
-//    return posts;
-// }
