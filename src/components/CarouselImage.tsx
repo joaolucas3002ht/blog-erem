@@ -153,14 +153,16 @@ export function CarouselImage() {
 
          <button
             className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 left-0 -translate-x-1/3 -translate-y-1/2 shadow-md"
-            onClick={() => CarouselPrevious(ClassBg, Number, 500)}
+            onClick={() =>
+               toggle ? '' : CarouselPrevious(ClassBg, Number, 500)
+            }
          >
             <BiChevronLeft />
          </button>
 
          <button
             className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 shadow-md"
-            onClick={() => CarouselNext(ClassBg, Number, 500)}
+            onClick={() => (toggle ? '' : CarouselNext(ClassBg, Number, 500))}
          >
             <BiChevronRight />
          </button>

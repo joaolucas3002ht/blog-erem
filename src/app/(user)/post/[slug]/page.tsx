@@ -69,7 +69,7 @@ export default async function Post({ params }: PostProps) {
 
          {mainImage ? (
             <div
-               className={`w-[min(100vw_,_52rem)] h-[min(56.25vw_,_29.25rem)] relative mx-auto rounded-2xl overflow-hidden`}
+               className={`w-[min(100%_,_52rem)] h-[min(56.25vw_,_29.25rem)] relative mx-auto rounded-2xl overflow-hidden`}
             >
                <Image
                   src={urlFor(mainImage).url()}
