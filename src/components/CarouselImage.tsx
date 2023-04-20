@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 interface ColorProps {
@@ -36,51 +36,73 @@ export function CarouselImage() {
       ClassBg[2],
    ]);
    const [Number, setNumber] = useState<number>(1);
-   const [togglePrevious, setTogglePrevious] = useState<boolean>(false);
-   const [toggleNext, setToggleNext] = useState<boolean>(false);
-   const [toggle, setToggle] = useState<string>('0');
 
-   function CarouselNext(ArrayInicial: ColorProps[], index: number) {
+   const [togglePrevious, setTogglePrevious] = useState<string>('-100%');
+   const [toggleNext, setToggleNext] = useState<string>('100%');
+   const [toggleMain, setToggleMain] = useState<string>('0');
+   const [toggle, setToggle] = useState<boolean>(false);
+   const [TimerValue, setTimerValue] = useState<number>(1000);
+
+   function CarouselNext(
+      ArrayInicial: ColorProps[],
+      index: number,
+      timerValue: number,
+   ) {
       const ArrayIndex = ArrayInicial.length - 1;
 
-      const Priscipar = index + 1 <= ArrayIndex ? index + 1 : 0;
+      const Main = index + 1 <= ArrayIndex ? index + 1 : 0;
 
-      const Next = Priscipar + 1 <= ArrayIndex ? Priscipar + 1 : 0;
+      const Next = Main + 1 <= ArrayIndex ? Main + 1 : 0;
 
-      setToggle('-100%');
-      setToggleNext(true);
+      setTimerValue(timerValue);
+      setToggle(true);
+      setTogglePrevious('-100%');
+      setToggleMain('-100%');
+      setToggleNext('0');
 
       setTimeout(() => {
          setPrevious([
             ArrayInicial[index],
-            ArrayInicial[Priscipar],
+            ArrayInicial[Main],
             ArrayInicial[Next],
          ]);
-         setNumber(Priscipar);
-         setToggleNext(false);
-      }, 400);
+         setNumber(Main);
+         setToggle(false);
+      }, timerValue + 100);
    }
 
-   function CarouselPrevious(ArrayInicial: ColorProps[], index: number) {
+   function CarouselPrevious(
+      ArrayInicial: ColorProps[],
+      index: number,
+      timerValue: number,
+   ) {
       const ArrayIndex = ArrayInicial.length - 1;
 
-      const Priscipar = index - 1 >= 0 ? index - 1 : ArrayIndex;
+      const Main = index - 1 >= 0 ? index - 1 : ArrayIndex;
 
-      const Previous = Priscipar - 1 >= 0 ? Priscipar - 1 : ArrayIndex;
+      const Previous = Main - 1 >= 0 ? Main - 1 : ArrayIndex;
 
-      setToggle('100%');
-      setTogglePrevious(true);
+      setTimerValue(timerValue);
+      setToggle(true);
+
+      setTogglePrevious('0');
+      setToggleMain('100%');
+      setToggleNext('100%');
 
       setTimeout(() => {
          setPrevious([
             ArrayInicial[Previous],
-            ArrayInicial[Priscipar],
+            ArrayInicial[Main],
             ArrayInicial[index],
          ]);
-         setNumber(Priscipar);
-         setTogglePrevious(false);
-      }, 400);
+         setNumber(Main);
+         setToggle(false);
+      }, timerValue + 100);
    }
+
+   // useEffect(() => {
+   //    setTimeout(() => CarouselNext(ClassBg, Number, 2000), 7000);
+   // }, []);
 
    return (
       <div className="relative w-[min(100%_,_52rem)] h-[min(56.25vw_,_29.25rem)] mx-auto ">
@@ -88,8 +110,8 @@ export function CarouselImage() {
             <div
                className={`min-w-full h-full -left-[100%] absolute top-0  transition-all z-10`}
                style={{
-                  left: `${togglePrevious ? '0' : '-100%'}`,
-                  transitionDuration: `${togglePrevious ? '300ms' : '0ms'}`,
+                  left: `${toggle ? togglePrevious : '-100%'}`,
+                  transitionDuration: `${toggle ? `${TimerValue}ms` : '0ms'}`,
                }}
             >
                <Image
@@ -102,8 +124,8 @@ export function CarouselImage() {
             <div
                className={`min-w-full h-full absolute top-0  duration-300 transition-all`}
                style={{
-                  left: `${togglePrevious ? toggle : '0'}`,
-                  transitionDuration: `${togglePrevious ? '300ms' : '0ms'}`,
+                  left: `${toggle ? toggleMain : '0'}`,
+                  transitionDuration: `${toggle ? `${TimerValue}ms` : '0ms'}`,
                }}
             >
                <Image
@@ -116,8 +138,8 @@ export function CarouselImage() {
             <div
                className={`min-w-full h-full left-[100%] absolute top-0 z-10`}
                style={{
-                  left: `${toggleNext ? '0' : '100%'}`,
-                  transitionDuration: `${toggleNext ? '300ms' : '0ms'}`,
+                  left: `${toggle ? toggleNext : '100%'}`,
+                  transitionDuration: `${toggle ? `${TimerValue}ms` : '0ms'}`,
                }}
             >
                <Image
@@ -130,19 +152,18 @@ export function CarouselImage() {
          </section>
 
          <button
-            className="p-1 bg-gray-200/60 rounded-full text-[clamp(1rem_,_3vw_,_1.875rem)] absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"
-            onClick={() => CarouselPrevious(ClassBg, Number)}
+            className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 left-0 -translate-x-1/3 -translate-y-1/2 shadow-md"
+            onClick={() => CarouselPrevious(ClassBg, Number, 500)}
          >
             <BiChevronLeft />
          </button>
 
          <button
-            className="p-1 bg-gray-200/60 rounded-full text-[clamp(1rem_,_3vw_,_1.875rem)] absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2"
-            onClick={() => CarouselNext(ClassBg, Number)}
+            className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 shadow-md"
+            onClick={() => CarouselNext(ClassBg, Number, 500)}
          >
             <BiChevronRight />
          </button>
       </div>
    );
 }
-
