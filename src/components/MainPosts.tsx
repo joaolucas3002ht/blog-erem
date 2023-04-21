@@ -22,7 +22,7 @@ interface CardProps {
    };
 }
 
-export async function CarouselPosts() {
+export async function MainPosts() {
    const Groq = groq`*[_type=="post"][0...8]{
     mainImage,
     slug,

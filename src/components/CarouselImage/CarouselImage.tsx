@@ -1,10 +1,8 @@
 'use client';
 
-import { groq } from 'next-sanity';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-import { client } from '../../lib/sanity.client';
 
 interface ColorProp {
    CarouselImage: { src: string }[];

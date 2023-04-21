@@ -1,5 +1,5 @@
-import { CarouselPosts } from '@/components/CarouselPosts';
-import { FetchCarouselImage } from '@/components/FetchCarouselImage';
+import { MainPosts } from '@/components/MainPosts';
+import { FetchCarouselImage } from '@/components/CarouselImage/FetchCarouselImage';
 import { IoMapOutline } from 'react-icons/io5';
 
 export default function Login() {
@@ -17,7 +17,7 @@ export default function Login() {
                ultimas postagens
             </h2>
             {/* @ts-expect-error */}
-            <CarouselPosts />
+            <MainPosts />
          </section>
 
          <section className=" flex flex-col gap-4">
