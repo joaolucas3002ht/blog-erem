@@ -16,7 +16,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
       CarouselImage[InitialValue],
       CarouselImage[0],
    ]);
-   const [Number, setNumber] = useState<number>(1);
+   const [Number, setNumber] = useState<number>(InitialValue);
 
    const [togglePrevious, setTogglePrevious] = useState<string>('-100%');
    const [toggleNext, setToggleNext] = useState<string>('100%');
