@@ -1,6 +1,5 @@
-import { CarouselImage } from '@/components/CarouselImage';
 import { CarouselPosts } from '@/components/CarouselPosts';
-import React from 'react';
+import { FetchCarouselImage } from '@/components/FetchCarouselImage';
 import { IoMapOutline } from 'react-icons/io5';
 
 export default function Login() {
@@ -10,7 +9,8 @@ export default function Login() {
             EREM Antônio Inácio
          </h1>
 
-         <CarouselImage />
+         {/* @ts-expect-error */}
+         <FetchCarouselImage />
 
          <section className=" flex flex-col gap-4">
             <h2 className="capitalize font-semibold text-3xl text-sky-700  font-mono">

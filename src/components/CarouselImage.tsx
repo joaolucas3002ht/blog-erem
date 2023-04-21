@@ -1,39 +1,22 @@
 'use client';
 
+import { groq } from 'next-sanity';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { client } from '../../lib/sanity.client';
 
-interface ColorProps {
-   src: string;
+interface ColorProp {
+   CarouselImage: { src: string }[];
 }
 
-export function CarouselImage() {
-   const ClassBg = [
-      {
-         src: 'https://picsum.photos/640',
-      },
-      {
-         src: 'https://picsum.photos/624',
-      },
-      {
-         src: 'https://picsum.photos/720',
-      },
-      {
-         src: 'https://picsum.photos/756',
-      },
-      {
-         src: 'https://picsum.photos/656',
-      },
-      {
-         src: 'https://picsum.photos/560',
-      },
-   ];
+export function CarouselImage({ CarouselImage }: ColorProp) {
+   const InitialValue = CarouselImage.length - 1;
 
-   const [Previous, setPrevious] = useState<ColorProps[]>([
-      ClassBg[0],
-      ClassBg[1],
-      ClassBg[2],
+   const [Previous, setPrevious] = useState<{ src: string }[]>([
+      CarouselImage[InitialValue - 1],
+      CarouselImage[InitialValue],
+      CarouselImage[0],
    ]);
    const [Number, setNumber] = useState<number>(1);
 
@@ -44,7 +27,7 @@ export function CarouselImage() {
    const [TimerValue, setTimerValue] = useState<number>(1000);
 
    function CarouselNext(
-      ArrayInicial: ColorProps[],
+      ArrayInicial: { src: string }[],
       index: number,
       timerValue: number,
    ) {
@@ -72,7 +55,7 @@ export function CarouselImage() {
    }
 
    function CarouselPrevious(
-      ArrayInicial: ColorProps[],
+      ArrayInicial: { src: string }[],
       index: number,
       timerValue: number,
    ) {
@@ -154,7 +137,7 @@ export function CarouselImage() {
          <button
             className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 left-0 -translate-x-1/3 -translate-y-1/2 shadow-md"
             onClick={() =>
-               toggle ? '' : CarouselPrevious(ClassBg, Number, 500)
+               toggle ? '' : CarouselPrevious(CarouselImage, Number, 500)
             }
          >
             <BiChevronLeft />
@@ -162,7 +145,9 @@ export function CarouselImage() {
 
          <button
             className="p-1 bg-gray-300/60 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 shadow-md"
-            onClick={() => (toggle ? '' : CarouselNext(ClassBg, Number, 500))}
+            onClick={() =>
+               toggle ? '' : CarouselNext(CarouselImage, Number, 500)
+            }
          >
             <BiChevronRight />
          </button>

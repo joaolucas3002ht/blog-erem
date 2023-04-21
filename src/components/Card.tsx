@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import '../../lib/dayjs';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
