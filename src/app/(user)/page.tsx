@@ -13,19 +13,19 @@ export default function Login() {
          <FetchCarouselImage />
 
          <section className=" flex flex-col gap-4">
-            <h2 className="capitalize font-semibold text-3xl text-sky-700  font-mono">
-               ultimas postagens
+            <h2 className=" font-semibold text-[clamp(1.25rem_,_5vw,_2rem)] text-sky-700  font-mono">
+               Nossos Projetos e Ações 
             </h2>
             {/* @ts-expect-error */}
             <MainPosts />
          </section>
 
          <section className=" flex flex-col gap-4">
-            <h2 className="capitalize font-semibold text-3xl text-sky-700  font-mono">
+            <h2 className="capitalize font-semibold text-[clamp(1.25rem_,_5vw,_2rem)] text-sky-700  font-mono">
                Endereço
             </h2>
             <p className="capitalize font-semibold text-lg dark:text-blue-50 flex flex-row gap-2 items-center">
-               Rua Sebastiao da Rocha, S/N - Centro, Feira Nova - PE
+               Rua Sebastião da Rocha, S/N - Centro, Feira Nova - PE
                <a
                   href="https://goo.gl/maps/prb43rbZnaZry7uA8"
                   target="_blank"
