@@ -42,7 +42,7 @@ export interface Hotspot {
    x: number;
    y: number;
 }
-
+ 
 export async function FetchCarouselImage() {
    const Groq = groq`*[_type=="main"] | order(createdAt desc)`;
 
@@ -50,32 +50,12 @@ export async function FetchCarouselImage() {
 
    const val: ImageFetch[] = Posts;
 
-   const ClassBg =  val.map((e) => {
+   const ClassBg = val.map(({ image, alt }) => {
       return {
-        src : urlFor(e.image.asset._ref).url()
-      }
+         src: urlFor(image.asset._ref).url(),
+         alt: alt ? alt : 'sem texto alternativo',
+      };
    });
-
-    [
-      {
-         src: 'https://picsum.photos/640',
-      },
-      {
-         src: 'https://picsum.photos/624',
-      },
-      {
-         src: 'https://picsum.photos/720',
-      },
-      {
-         src: 'https://picsum.photos/756',
-      },
-      {
-         src: 'https://picsum.photos/656',
-      },
-      {
-         src: 'https://picsum.photos/560',
-      },
-   ];
 
    return (
       <>
@@ -83,3 +63,23 @@ export async function FetchCarouselImage() {
       </>
    );
 }
+// [
+//    {
+//       src: 'https://picsum.photos/640',
+//    },
+//    {
+//       src: 'https://picsum.photos/624',
+//    },
+//    {
+//       src: 'https://picsum.photos/720',
+//    },
+//    {
+//       src: 'https://picsum.photos/756',
+//    },
+//    {
+//       src: 'https://picsum.photos/656',
+//    },
+//    {
+//       src: 'https://picsum.photos/560',
+//    },
+// ];
