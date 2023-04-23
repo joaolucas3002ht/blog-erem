@@ -22,7 +22,7 @@ interface CardProps {
    };
 }
 
-export async function MainPosts() {
+export async function FetchPosts() {
    const Groq = groq`*[_type=="post"][0...8]{
     mainImage,
     slug,
@@ -34,7 +34,7 @@ export async function MainPosts() {
 
    return (
       <div className="w-full mx-auto">
-         <div className="overflow-x-scroll flex gap-2 ">
+         <div className="overflow-x-scroll flex gap-2">
             {Posts.map((e, i) => (
                <div key={i}>
                   <Card

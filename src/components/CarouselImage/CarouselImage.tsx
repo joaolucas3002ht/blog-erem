@@ -17,7 +17,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
    const InitialValue = CarouselImage.length - 1;
 
    const [Carousel, setCarousel] = useState<CarouselImagePros[]>([
-      CarouselImage[InitialValue - 1],
+      CarouselImage[InitialValue - 1 >= 0 ? InitialValue - 1 : 0],
       CarouselImage[InitialValue],
       CarouselImage[0],
    ]);
@@ -97,7 +97,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
    return (
       <div className="relative w-[min(100%_,_52rem)] h-[min(56.25vw_,_29.25rem)] mx-auto ">
          <section className="w-[100%] h-[min(56.25vw_,_29.25rem)]  right-1/2 translate-x-1/2 mx-auto rounded-2xl bg-gray-500/90  flex flex-row items-center scroll-m-0 scrollbar-none relative overflow-hidden">
-            {CarouselImage.length >= 2 ? (
+            {CarouselImage.length > 0 ? (
                <>
                   <div
                      className={`min-w-full h-full -left-[100%] absolute top-0  transition-all z-10 overflow-hidden`}

@@ -1,6 +1,9 @@
-import { MainPosts } from '@/components/MainPosts';
+import { FetchPosts } from '@/components/FetchPosts';
 import { FetchCarouselImage } from '@/components/CarouselImage/FetchCarouselImage';
 import { IoMapOutline } from 'react-icons/io5';
+import { MainH2 } from '@/components/MainH2';
+import { ContainerSectionMain } from '@/components/ContainerSectionMain';
+import Link from 'next/link';
 
 export default function Login() {
    return (
@@ -12,19 +15,35 @@ export default function Login() {
          {/* @ts-expect-error */}
          <FetchCarouselImage />
 
-         <section className=" flex flex-col gap-4">
-            <h2 className=" font-semibold text-[clamp(1.25rem_,_5vw,_2rem)] text-sky-700  font-mono">
+         <ContainerSectionMain>
+            <MainH2>Nossa História</MainH2>
+
+            <p className="font-medium text-base dark:text-blue-50 ">
+               A Escola de Referência em Ensino Médio Antônio Inácio, localizada
+               em Feira Nova, Pernambuco, foi fundada em 1967 como Grupo Escolar
+               Antônio Inácio. Ao longo dos anos, passou por melhorias físicas,
+               como a construção de laboratórios, rampas de acesso para pessoas
+               com necessidades especiais e ampliação da oferta de ensino,
+               incluindo o Ensino Médio. Atualmente, conta com um corpo docente
+               e discente em constante renovação, com foco na melhoria da
+               qualidade do ensino e aprendizagem. Leia mais em:{' '}
+               <Link href="/post/historico-da-erem-antonio-inacio" target="_blank" className='text-blue-700/60 font-semibold hover:text-blue-700'>
+                  Histórico da EREM Antônio Inácio
+               </Link>
+            </p>
+         </ContainerSectionMain>
+
+         <ContainerSectionMain>
+            <MainH2>
                {/* Nossos  */}
                Projetos e Ações
-            </h2>
+            </MainH2>
             {/* @ts-expect-error */}
-            <MainPosts />
-         </section>
+            <FetchPosts />
+         </ContainerSectionMain>
 
-         <section className=" flex flex-col gap-4">
-            <h2 className="capitalize font-semibold text-[clamp(1.25rem_,_5vw,_2rem)] text-sky-700  font-mono">
-               Endereço
-            </h2>
+         <ContainerSectionMain>
+            <MainH2>Endereço</MainH2>
             <p className="capitalize font-semibold text-lg dark:text-blue-50 flex flex-row gap-2 items-center">
                Rua Sebastião da Rocha, S/N - Centro, Feira Nova - PE
                <a
@@ -46,7 +65,7 @@ export default function Login() {
                style={{ border: 0 }}
                loading="lazy"
             ></iframe>
-         </section>
+         </ContainerSectionMain>
       </div>
    );
 }
