@@ -14,8 +14,8 @@ export default function Login() {
 
          <section className=" flex flex-col gap-4">
             <h2 className=" font-semibold text-[clamp(1.25rem_,_5vw,_2rem)] text-sky-700  font-mono">
-               
-               Nossos Projetos e Ações 
+               {/* Nossos  */}
+               Projetos e Ações
             </h2>
             {/* @ts-expect-error */}
             <MainPosts />
