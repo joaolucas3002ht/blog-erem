@@ -42,7 +42,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
 
       setTimeout(
          () => setCarousel([reset, ArrayInitial[Main], reset]),
-         timerValue + 95,
+         timerValue + 98,
       );
       setTimeout(() => {
          setCarousel([
