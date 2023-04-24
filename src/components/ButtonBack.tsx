@@ -1,11 +1,10 @@
-"use client"
+'use client';
 
 import { useRouter } from 'next/navigation';
 import { BiArrowBack } from 'react-icons/bi';
 
 export function ButtonBack() {
    const Router = useRouter();
-
 
    return (
       <button
@@ -18,4 +17,3 @@ export function ButtonBack() {
       </button>
    );
 }
-

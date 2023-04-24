@@ -27,7 +27,10 @@ export default function Login() {
                incluindo o Ensino Médio. Atualmente, conta com um corpo docente
                e discente em constante renovação, com foco na melhoria da
                qualidade do ensino e aprendizagem. Leia mais em:{' '}
-               <Link href="/post/historico-da-erem-antonio-inacio" target="_blank" className='text-blue-700/60 font-semibold hover:text-blue-700'>
+               <Link
+                  href="/post/historico-da-erem-antonio-inacio"
+                  className="text-sky-700/70 font-semibold  hover:text-sky-700 hover:underline"
+               >
                   Histórico da EREM Antônio Inácio
                </Link>
             </p>
