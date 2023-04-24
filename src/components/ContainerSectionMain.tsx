@@ -5,5 +5,5 @@ interface ContainerSectionMainProps {
 }
 
 export function ContainerSectionMain({children}:ContainerSectionMainProps) {
-   return <section>{children}</section>;
+   return <section className='w-full flex flex-col gap-4'>{children}</section>;
 }

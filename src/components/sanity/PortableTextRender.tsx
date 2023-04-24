@@ -69,7 +69,7 @@ export default function PortableTextRender({
                   </blockquote>
                ),
                normal: ({ children }: any): any => (
-                  <p className="pb-2 text-base ">{children}</p>
+                  <p className="pb-[.375rem] text-base ">{children}</p>
                ),
             },
             marks: {

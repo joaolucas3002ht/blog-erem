@@ -29,7 +29,7 @@ export default function Login() {
                qualidade do ensino e aprendizagem. Leia mais em:{' '}
                <Link
                   href="/post/historico-da-erem-antonio-inacio"
-                  className="text-sky-700/70 font-semibold  hover:text-sky-700 hover:underline"
+                  className=" font-semibold  text-[#006BCC] cursor-pointer hover:text-blue-900/90 dark:hover:text-blue-800 hover:underline text-lizard_green"
                >
                   Histórico da EREM Antônio Inácio
                </Link>
@@ -47,7 +47,7 @@ export default function Login() {
 
          <ContainerSectionMain>
             <MainH2>Endereço</MainH2>
-            <p className="capitalize font-semibold text-lg dark:text-blue-50 flex flex-row gap-2 items-center">
+            <div className="capitalize font-semibold text-lg dark:text-blue-50 flex flex-row gap-2 items-center">
                Rua Sebastião da Rocha, S/N - Centro, Feira Nova - PE
                <a
                   href="https://goo.gl/maps/prb43rbZnaZry7uA8"
@@ -57,7 +57,7 @@ export default function Login() {
                >
                   <IoMapOutline />
                </a>
-            </p>
+            </div>
             <iframe
                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2122.0857111801342!2d-35.383052821856836!3d-7.9510486032343675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aba53ae2e21179%3A0x51dab90f5e0c4d1b!2sEREM%20Ant%C3%B4nio%20In%C3%A1cio%20-%20Ensino%20M%C3%A9dio!5e0!3m2!1spt-BR!2sbr!4v1680979878257!5m2!1spt-BR!2sbr"
                width="500"
