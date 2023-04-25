@@ -1,8 +1,6 @@
 import {
-   usePathname,
    useRouter,
    useSearchParams,
-   redirect,
 } from 'next/navigation';
 import React, { FormEvent, useCallback, useState } from 'react';
 
@@ -29,7 +27,7 @@ export function SearchHeader() {
       const editeSearch = search.trim();
 
       const Query = editeSearch
-         ? `news/?${createQueryString('search', editeSearch)}`
+         ? `post/?${createQueryString('search', editeSearch)}`
          : '';
 
       router.push(Query);

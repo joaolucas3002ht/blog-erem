@@ -51,10 +51,10 @@ export function NavMenu() {
                   </li>
                   <li>
                      <Link
-                        href="/news"
+                        href="/post"
                         className="transition-colors flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                      >
-                        <BiNews size={18} /> News
+                        <BiNews size={18} /> Posts
                      </Link>
                   </li>
                   <li>

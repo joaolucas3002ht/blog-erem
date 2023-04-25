@@ -1,11 +1,11 @@
-import { FetchPosts } from '@/components/FetchPosts';
-import { FetchCarouselImage } from '@/components/CarouselImage/FetchCarouselImage';
+import { FetchPosts } from '@/components/Home/FetchPosts';
+import { FetchCarouselImage } from '@/components/Home/Carousel/FetchCarouselImage';
 import { IoMapOutline } from 'react-icons/io5';
 import { MainH2 } from '@/components/MainH2';
-import { ContainerSectionMain } from '@/components/ContainerSectionMain';
+import { ContainerSectionMain } from '@/components/Home/ContainerSectionMain';
 import Link from 'next/link';
 
-export default function Login() {
+export default function Home() {
    return (
       <div className="w-full flex flex-col gap-[clamp(20px,4vw,32px)] max-w-5xl m-auto relative h-full px-[min(4%_,_2rem)] py-12">
          <h1 className="font-bold text-[clamp(1.875rem,8vw,45px)] text-center text-sky-700 font-mono">
@@ -29,7 +29,7 @@ export default function Login() {
                qualidade do ensino e aprendizagem. Leia mais em:{' '}
                <Link
                   href="/post/historico-da-erem-antonio-inacio"
-                  className=" font-semibold  text-[#006BCC] cursor-pointer hover:text-blue-900/90 dark:hover:text-blue-800 hover:underline text-lizard_green"
+                  className=" font-semibold  text-[hsl(209,100%,40%)] cursor-pointer hover:text-[hsl(209,100%,25%)] dark:hover:text-[hsl(209,100%,45%)] hover:underline text-lizard_green"
                >
                   Histórico da EREM Antônio Inácio
                </Link>

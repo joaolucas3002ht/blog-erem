@@ -8,6 +8,9 @@ interface PortableTextRenderProps {
    content: TypedObject | TypedObject[];
 }
 
+
+
+
 export default function PortableTextRender({
    content,
 }: PortableTextRenderProps) {

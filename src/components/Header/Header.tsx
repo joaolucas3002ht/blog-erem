@@ -6,7 +6,6 @@ import { NavMenu } from './NavMenu';
 import { SearchHeader } from './SearchHeader';
 
 export function Header() {
-   // await fetch('').catch((e) => console.error(e));
 
    return (
       <>

@@ -1,4 +1,4 @@
-import { PostsList } from '@/components/News/PostsList';
+import { PostsList } from '@/components/Post/PostsList';
 import { Suspense } from 'react';
 
 export function RenderClient() {

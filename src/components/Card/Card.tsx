@@ -1,8 +1,8 @@
-import '../../lib/dayjs';
+import '../../../lib/dayjs';
 import Image from 'next/image';
-import urlFor from '../../lib/urlFor';
+import urlFor from '../../../lib/urlFor';
 import Link from 'next/link';
-import { dateFormat } from '../../utils/dateFormat';
+import { dateFormat } from '../../../utils/dateFormat';
 
 interface CardProps {
    publishedAt: Date;

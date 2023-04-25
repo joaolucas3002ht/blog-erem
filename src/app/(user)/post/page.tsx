@@ -1,4 +1,4 @@
-import { RenderClient } from '@/components/News/RenderClient';
+import { RenderClient } from '@/components/Post/RenderClient';
 
 /* @ ts-expect-error */
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { CarouselImage } from './CarouselImage';
 import { groq } from 'next-sanity';
-import { client } from '../../../lib/sanity.client';
-import urlFor from '../../../lib/urlFor';
+import { client } from '../../../../lib/sanity.client';
+import urlFor from '../../../../lib/urlFor';
 
 export interface ImageFetch {
    _type: string;
@@ -42,7 +42,7 @@ export interface Hotspot {
    x: number;
    y: number;
 }
- 
+
 export async function FetchCarouselImage() {
    const Groq = groq`*[_type=="main"] | order(createdAt desc)`;
 

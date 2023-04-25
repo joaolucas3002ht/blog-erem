@@ -1,12 +1,12 @@
 'use client';
 
-import { Card } from '../Card';
+import { Card } from '../Card/Card';
 import { useEffect, useState } from 'react';
 
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
 import { ArroyPuth } from './ArroyPuth';
 import { FetchPosts } from '../../../utils/FetchPosts';
-import { CardLoading } from '../CardLoading';
+import { CardLoading } from '../Card/CardLoading';
 
 interface CardProps {
    title: string;
@@ -34,7 +34,6 @@ interface PostProps {
 interface PostFetchProps {
    params: ReadonlyURLSearchParams;
 }
-
 
 export function PostsList() {
    const [Loading, setLoading] = useState<boolean>(false);
@@ -100,7 +99,6 @@ export function PostsList() {
    );
 }
 
-
 // interface PostProps {
 //    _createdAt: string;
 //    _id: string;
@@ -138,4 +136,3 @@ export function PostsList() {
 //    title: string;
 // }
 // [];
-
