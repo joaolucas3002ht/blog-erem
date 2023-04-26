@@ -12,7 +12,7 @@ import {
 } from 'react-icons/bi';
 import { HiFolderPlus } from 'react-icons/hi2';
 import { MidiaMenu } from './MidiaMenu';
-import { SocialValues } from '../../../public/SocialValues';
+import { SocialValues } from '../../../../public/SocialValues';
 
 export function NavMenu() {
    const [Toggle, setToggle] = useState<boolean>(false);
@@ -28,6 +28,7 @@ export function NavMenu() {
                setToggle(!Toggle);
                setElementULToggle(false);
             }}
+            aria-label="botão para abrir e fechar o menu"
             aria-expanded={Toggle}
          >
             {Toggle ? <BiMenuAltRight /> : <BiMenu />}

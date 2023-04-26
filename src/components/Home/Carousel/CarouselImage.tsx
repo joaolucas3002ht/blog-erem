@@ -172,6 +172,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
             onClick={() =>
                toggle ? '' : CarouselPrevious(CarouselImage, Number, 500)
             }
+            aria-label="botão de retroceder imagem do carrossel"
          >
             <BiChevronLeft />
          </button>
@@ -181,6 +182,7 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
             onClick={() =>
                toggle ? '' : CarouselNext(CarouselImage, Number, 500)
             }
+            aria-label="botão de avançar imagem do carrossel"
          >
             <BiChevronRight />
          </button>

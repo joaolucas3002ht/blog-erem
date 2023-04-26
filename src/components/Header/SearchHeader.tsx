@@ -43,6 +43,7 @@ export function SearchHeader() {
             className="w-[min(600px,50vw)] h-9 px-2 bg-gray-100 dark:bg-[hsl(220,15%,20%)]  rounded-full dark:text-white cancel-button"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
+            aria-label="campo de pesquisa"
          />
       </form>
    );

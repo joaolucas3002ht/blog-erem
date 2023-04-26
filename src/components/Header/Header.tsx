@@ -2,11 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { NavMenu } from './NavMenu';
+import { NavMenu } from './Menu/NavMenu';
 import { SearchHeader } from './SearchHeader';
 
 export function Header() {
-
    return (
       <>
          <section className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full relative">

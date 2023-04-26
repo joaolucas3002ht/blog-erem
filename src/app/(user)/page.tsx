@@ -54,6 +54,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block hover:text-sky-700 p-[6px] bg-slate-200/40 rounded shadow-md"
+                  aria-label="botão para o google maps com a localização da instituição"
                >
                   <IoMapOutline />
                </a>
@@ -67,7 +68,8 @@ export default function Home() {
                allowFullScreen={false}
                style={{ border: 0 }}
                loading="lazy"
-            ></iframe>
+               title='Iframe do google maps com a localização da instituição'
+            >Iframe do google maps com a localização da instituição</iframe>
          </ContainerSectionMain>
       </div>
    );

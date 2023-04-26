@@ -1,7 +1,7 @@
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io5';
 import { LinkMidiaMenu } from './LinkMidiaMenu';
 import { ReactNode } from 'react';
-import { SocialValuesProps } from '../../../public/SocialValues';
+import { SocialValuesProps } from '../../../../public/SocialValues';
 
 interface MidiaMenuProps {
    toggle: boolean;

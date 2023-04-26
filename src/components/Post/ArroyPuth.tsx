@@ -43,6 +43,7 @@ export function ArroyPuth({
                      )}`,
                   );
                }}
+               aria-label='botão para retroceder página'
             >
                <BiLeftArrowAlt size={24} />
             </button>
@@ -65,6 +66,7 @@ export function ArroyPuth({
                      )}`,
                   );
                }}
+               aria-label='botão para avançar página'
             >
                <BiRightArrowAlt size={24} />
             </button>
