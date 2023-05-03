@@ -6,6 +6,7 @@ import { client } from '../../../../../lib/sanity.client';
 import urlFor from '../../../../../lib/urlFor';
 import { dateFormat } from '../../../../../utils/dateFormat';
 import { ButtonBack } from '@/components/ButtonBack';
+import { notFound } from 'next/navigation';
 
 interface PostProps {
    params: {
@@ -57,20 +58,24 @@ export default async function Post({ params }: PostProps) {
 
    const value: PostFetchProps = await client.fetch(query);
 
-   console.log(value)
+   console.log(value);
 
-   const date = dateFormat(value.publishedAt);
+   if (!value) {
+      notFound()
+   }
+
+   const date = dateFormat(value?.publishedAt);
 
    return (
       <main className="min-h-screen h-full max-w-5xl w-full text-black dark:text-slate-100  m-auto flex flex-col gap-4 py-4 px-[min(3%_,_1rem)]">
-         <ButtonBack/>
+         <ButtonBack />
 
-         {value.mainImage ? (
+         {value?.mainImage ? (
             <div
                className={`w-[min(100%_,_52rem)] h-[min(56.25vw_,_29.25rem)] relative mx-auto rounded-2xl overflow-hidden`}
             >
                <Image
-                  src={urlFor(value.mainImage).url()}
+                  src={urlFor(value?.mainImage).url()}
                   className="min-h-full min-w-full object-cover object-center"
                   alt={''}
                   fill
@@ -82,11 +87,11 @@ export default async function Post({ params }: PostProps) {
 
          <section className="">
             <h1 className="text-4xl font-semibold text-slate-50 capitalize">
-               {value.title}
+               {value?.title}
             </h1>
             <p>{date}</p>
             <div className="relative z-0 py-10">
-               <PortableTextRender content={value.body} />
+               <PortableTextRender content={value?.body} />
             </div>
          </section>
       </main>

@@ -30,49 +30,4 @@ export function ArroyPuth({
       [searchParams],
    );
 
-   return (
-      <div className=" mx-auto w-min  flex justify-center items-center flex-row gap-2 text-black dark:text-white ">
-         {currentPage > 1 ? (
-            <button
-               className="w-6"
-               onClick={() => {
-                  router.push(
-                     `${pathname}?${createQueryString(
-                        'page',
-                        `${currentPage - 1}`,
-                     )}`,
-                  );
-               }}
-               aria-label='botão para retroceder página'
-            >
-               <BiLeftArrowAlt size={24} />
-            </button>
-         ) : (
-            <div className="w-6"> </div>
-         )}
-         {pagesLength > 1 ? (
-            <div className="w-4 flex justify-center text-lg">{currentPage}</div>
-         ) : (
-            <div className="w-6"> </div>
-         )}
-         {currentPage < pagesLength ? (
-            <button
-               className="w-6"
-               onClick={() => {
-                  router.push(
-                     `${pathname}?${createQueryString(
-                        'page',
-                        `${currentPage + 1}`,
-                     )}`,
-                  );
-               }}
-               aria-label='botão para avançar página'
-            >
-               <BiRightArrowAlt size={24} />
-            </button>
-         ) : (
-            <div className="w-6"> </div>
-         )}
-      </div>
-   );
 }

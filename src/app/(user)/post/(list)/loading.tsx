@@ -1,8 +1,8 @@
-import { CardLoading } from "@/components/Card/CardLoading";
+import { CardLoading } from '@/components/Card/CardLoading';
 
 export default function loading() {
    return (
-      <div className="w-full flex flex-col gap-6 max-w-7xl m-auto relative h-full">
+      <div className="w-full py-12 flex flex-row flex-wrap  max-w-7xl m-auto relative justify-center items-center  gap-4">
          {Array.from({ length: 12 }, (val, ind) => ind).map((val, ind) => (
             <CardLoading key={ind} />
          ))}

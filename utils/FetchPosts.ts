@@ -35,8 +35,6 @@ async function GetCardPropsLength({
       : groq`
 *[_type=="post"].length`;
 
-   console.log(GetQuery);
-
    const posts: CardProps[] = await client.fetch(GetQuery);
 
    const val = Math.ceil([...posts].length / lengthElementPage);
@@ -66,8 +64,6 @@ async function GetCardPropsSearch({
    title
 } | order(publishedAt desc)`;
 
-   console.log(PageMin, pageMax,page);
-
    const posts: CardProps[] = await client.fetch(GetQuery);
 
    return posts;
@@ -78,10 +74,13 @@ export async function FetchPosts({
    query = '',
    page = 1,
 }: PostFetchProps) {
+   const PageValidate = page ? page : 1;
 
-  const PageValidate = page ? page : 1
-
-   const post = await GetCardPropsSearch({ query,page: PageValidate, lengthElementPage });
+   const post = await GetCardPropsSearch({
+      query,
+      page: PageValidate,
+      lengthElementPage,
+   });
 
    const pagesLength = await GetCardPropsLength({
       query,
@@ -89,10 +88,10 @@ export async function FetchPosts({
       lengthElementPage,
    });
 
-   console.log(
-      { post: post, pagesLength: pagesLength },
-      { query, PageValidate, lengthElementPage },
-   );
-
    return { post: post, pagesLength: pagesLength };
 }
+
+// console.log(
+//    { post: post, pagesLength: pagesLength },
+//    { query, PageValidate, lengthElementPage },
+// );
