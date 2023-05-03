@@ -5,4 +5,3 @@ import main from './main';
 import blockContentMain from './blockContentMain';
 
 export const schemaTypes = [post, main, blockContentMain, blockContent];
-//  category,

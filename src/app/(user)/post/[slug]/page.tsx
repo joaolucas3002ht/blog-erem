@@ -1,4 +1,3 @@
-// import { Test } from '@/components/Test';
 import PortableTextRender from '@/components/sanity/PortableTextRender';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
@@ -61,7 +60,7 @@ export default async function Post({ params }: PostProps) {
    console.log(value);
 
    if (!value) {
-      notFound()
+      notFound();
    }
 
    const date = dateFormat(value?.publishedAt);
@@ -86,11 +85,11 @@ export default async function Post({ params }: PostProps) {
          )}
 
          <section className="">
-            <h1 className="text-4xl font-semibold text-slate-50 capitalize">
+            <h1 className="font-semibold text-[clamp(2.125rem_,_6.5vw,_3rem)] text-sky-700 font-primary leading-snug">
                {value?.title}
             </h1>
             <p>{date}</p>
-            <div className="relative z-0 py-10">
+            <div className="relative z-0 py-10 ">
                <PortableTextRender content={value?.body} />
             </div>
          </section>

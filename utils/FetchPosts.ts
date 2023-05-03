@@ -90,8 +90,3 @@ export async function FetchPosts({
 
    return { post: post, pagesLength: pagesLength };
 }
-
-// console.log(
-//    { post: post, pagesLength: pagesLength },
-//    { query, PageValidate, lengthElementPage },
-// );

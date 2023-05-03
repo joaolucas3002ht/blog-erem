@@ -8,9 +8,6 @@ interface PortableTextRenderProps {
    content: TypedObject | TypedObject[];
 }
 
-
-
-
 export default function PortableTextRender({
    content,
 }: PortableTextRenderProps) {
@@ -46,23 +43,18 @@ export default function PortableTextRender({
                ),
             },
             block: {
-               h1: ({ children }: any): any => (
-                  <h1 className="text-5xl pb-3 font-mono font-medium break-words">
-                     {children}
-                  </h1>
-               ),
                h2: ({ children }: any): any => (
-                  <h2 className="text-4xl pb-3 font-mono font-medium break-words">
+                  <h2 className="text-[clamp(1.875rem_,_6vw,_2.625rem)] leading-snug pb-3 text-sky-700 font-primary font-medium break-words">
                      {children}
                   </h2>
                ),
                h3: ({ children }: any): any => (
-                  <h3 className="text-3xl pb-3 font-mono font-medium break-words">
+                  <h3 className="text-[clamp(1.75rem_,_6vw,_2.375rem)] leading-snug pb-3 text-sky-700 font-primary font-medium break-words">
                      {children}
                   </h3>
                ),
                h4: ({ children }: any): any => (
-                  <h4 className="text-2xl pb-3 font-mono font-medium break-words">
+                  <h4 className="text-[clamp(1.5rem_,_6vw,_2rem)] leading-snug pb-3 text-sky-700 font-primary font-medium break-words">
                      {children}
                   </h4>
                ),
