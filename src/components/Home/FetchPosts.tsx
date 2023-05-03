@@ -2,7 +2,6 @@ import { groq } from 'next-sanity';
 import React from 'react';
 import { client } from '../../../lib/sanity.client';
 import { Card } from '../Card/Card';
-import { CardLoading } from '../Card/CardLoading';
 
 interface CardProps {
    title: string;

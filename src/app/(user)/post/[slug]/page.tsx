@@ -57,8 +57,6 @@ export default async function Post({ params }: PostProps) {
 
    const value: PostFetchProps = await client.fetch(query);
 
-   console.log(value);
-
    if (!value) {
       notFound();
    }
