@@ -5,7 +5,7 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 
 export const dynamic = 'force-dynamic';
 
-export default async function Home({
+export default async function Post({
    searchParams,
 }: {
    params: { [key: string]: string };

@@ -4,6 +4,7 @@ export default defineType({
    name: 'main',
    title: 'Main Imagens',
    type: 'document',
+
    fields: [
       defineField({
          name: 'alt',
@@ -20,3 +21,4 @@ export default defineType({
       }),
    ],
 });
+

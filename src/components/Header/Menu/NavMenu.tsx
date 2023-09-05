@@ -1,18 +1,17 @@
 'use client';
-import { truncate } from 'fs';
 import Link from 'next/link';
 import { useState } from 'react';
 import {
-   BiMenuAltRight,
-   BiMenu,
-   BiHomeAlt2,
-   BiNews,
    BiChevronDown,
    BiChevronUp,
+   BiHomeAlt2,
+   BiMenu,
+   BiMenuAltRight,
+   BiNews,
 } from 'react-icons/bi';
-import { HiFolderPlus } from 'react-icons/hi2';
-import { MidiaMenu } from './MidiaMenu';
+import { LuFolderPlus, LuHome } from 'react-icons/lu';
 import { SocialValues } from '../../../../public/SocialValues';
+import { MidiaMenu } from './MidiaMenu';
 
 export function NavMenu() {
    const [Toggle, setToggle] = useState<boolean>(false);
@@ -25,7 +24,7 @@ export function NavMenu() {
             data-dropdown-toggle="dropdown"
             className=" hover:bg-white hover:bg-opacity-20 dark:hover:bg-black dark:hover:bg-opacity-25 text-slate-50  text-3xl font-medium rounded-lg   p-[4px] text-center focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-600"
             onClick={() => {
-               setToggle(!Toggle);
+               setToggle((e) => !e);
                setElementULToggle(false);
             }}
             aria-label="botão para abrir e fechar o menu"
@@ -45,14 +44,16 @@ export function NavMenu() {
                   <li>
                      <Link
                         href="/"
+                        onClick={() => setToggle((e) => !e)}
                         className="transition-colors flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                      >
-                        <BiHomeAlt2 size={18} /> Home
+                        <LuHome size={18} /> Home
                      </Link>
                   </li>
                   <li>
                      <Link
                         href="/post"
+                        onClick={() => setToggle((e) => !e)}
                         className="transition-colors flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                      >
                         <BiNews size={18} /> Posts
@@ -80,9 +81,10 @@ export function NavMenu() {
                      <a
                         href="/studio/"
                         target="_blank"
+                        onClick={() => setToggle((e) => !e)}
                         className="transition-colors flex items-center gap-2 px-4 py-2 hover:bg-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                      >
-                        <HiFolderPlus size={18} /> Studio
+                        <LuFolderPlus size={18} /> Studio
                      </a>
                   </li>
                </ul>
