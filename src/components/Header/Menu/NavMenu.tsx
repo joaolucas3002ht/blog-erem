@@ -22,23 +22,24 @@ export function NavMenu() {
          <button
             id="dropdownDefaultButton"
             data-dropdown-toggle="dropdown"
-            className=" hover:bg-white hover:bg-opacity-20 dark:hover:bg-black dark:hover:bg-opacity-25 text-slate-50  text-3xl font-medium rounded-lg   p-[4px] text-center focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-600"
+            className=" hover:bg-white hover:bg-opacity-20 dark:hover:bg-black dark:hover:bg-opacity-25 text-slate-50  text-3xl font-medium rounded-lg p-[4px] text-center focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-600"
             onClick={() => {
                setToggle((e) => !e);
                setElementULToggle(false);
             }}
             aria-label="botão para abrir e fechar o menu"
             aria-expanded={Toggle}
+            aria-hidden={Toggle}
          >
             {Toggle ? <BiMenuAltRight /> : <BiMenu />}
          </button>
          {Toggle && (
             <div
                id="dropdown"
-               className="z-10  rounded-lg w-56 absolute right-2 top-[105%] bg-black bg-opacity-[30%] dark:bg-opacity-30 shadow-md backdrop-blur-[2px]"
+               className="z-10 rounded-lg w-56 absolute right-2 top-[105%] bg-black/30 shadow-md backdrop-blur-[2px]"
             >
                <ul
-                  className="py-2 flex flex-col text-sm text-white dark:text-white"
+                  className="py-2 flex flex-col text-sm text-white dark:text-white z-10"
                   aria-labelledby="dropdownDefaultButton"
                >
                   <li>

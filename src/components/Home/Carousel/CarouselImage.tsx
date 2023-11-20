@@ -1,7 +1,7 @@
 
 'use client';
 
-import { ComponentProps, useState } from 'react';
+import { ComponentProps, useEffect, useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,93 +17,16 @@ interface CarouselImagePros {
 }
 
 export function CarouselImage({ CarouselImage }: ColorProp) {
-   const InitialValue = CarouselImage.length - 1;
-
-   const [Carousel, setCarousel] = useState<CarouselImagePros[]>([
-      CarouselImage[InitialValue - 1 >= 0 ? InitialValue - 1 : 0],
-      CarouselImage[InitialValue],
-      CarouselImage[0],
-   ]);
-
-   const [Number, setNumber] = useState<number>(InitialValue);
-   const [togglePrevious, setTogglePrevious] = useState<string>('-100%');
-   const [toggleNext, setToggleNext] = useState<string>('100%');
-   const [toggleMain, setToggleMain] = useState<string>('0');
-   const [toggle, setToggle] = useState<boolean>(false);
-   const [TimerValue, setTimerValue] = useState<number>(1000);
-
-   function editValueCarousel(
-      ArrayInitial: CarouselImagePros[],
-      timerValue: number,
-      Previous: number,
-      Main: number,
-      Next: number,
-   ) {
-      setTimerValue(timerValue);
-      setToggle(true);
-      const reset = { src: '', alt: '' };
-
-      setTimeout(
-         () => setCarousel([reset, ArrayInitial[Main], reset]),
-         timerValue + 98,
-      );
-      setTimeout(() => {
-         setCarousel([
-            ArrayInitial[Previous],
-            ArrayInitial[Main],
-            ArrayInitial[Next],
-         ]);
-         setNumber(Main);
-         setToggle(false);
-      }, timerValue + 100);
-   }
-
-   function CarouselNext(
-      ArrayInitial: CarouselImagePros[],
-      index: number,
-      timerValue: number,
-   ) {
-      const ArrayIndex = ArrayInitial.length - 1;
-
-      const Main = index + 1 <= ArrayIndex ? index + 1 : 0;
-
-      const Next = Main + 1 <= ArrayIndex ? Main + 1 : 0;
-
-      setTogglePrevious('-100%');
-      setToggleMain('-100%');
-      setToggleNext('0');
-
-      editValueCarousel(ArrayInitial, timerValue, index, Main, Next);
-   }
-
-   function CarouselPrevious(
-      ArrayInitial: CarouselImagePros[],
-      index: number,
-      timerValue: number,
-   ) {
-      const ArrayIndex = ArrayInitial.length - 1;
-
-      const Main = index - 1 >= 0 ? index - 1 : ArrayIndex;
-
-      const Previous = Main - 1 >= 0 ? Main - 1 : ArrayIndex;
-
-      setTogglePrevious('0');
-      setToggleMain('100%');
-      setToggleNext('100%');
-
-      editValueCarousel(ArrayInitial, timerValue, Previous, Main, index);
-   }
-
 
    const PrevArrow = ({className = '', ...props}:ComponentProps<"button">) => (
       <button className={`relative z-10 before:content-none before:hidden ${className}`} {...props}>
-         <BiChevronLeft className='absolute top-1/2 -translate-y-1/2 left-4 z-10 h-8 w-8 text-slate-900 bg-slate-100/70 hover:bg-slate-100/90 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] shadow-md'/>
+         <BiChevronLeft className='absolute top-1/2 -translate-y-1/2 left-4 z-0 h-8 w-8 text-slate-900 bg-slate-100/70 hover:bg-slate-100/90 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] shadow-md'/>
       </button>
       )
 
    const NextArrow = ({className = '', ...props}:ComponentProps<"button">) => (
       <button className={`relative z-10 before:content-none before:hidden ${className}`} {...props}>
-         <BiChevronRight className='absolute top-1/2 -translate-y-1/2 -left-7 z-10 h-8 w-8 text-slate-900 bg-slate-100/70 hover:bg-slate-100/90 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] shadow-md'/>
+         <BiChevronRight className='absolute top-1/2 -translate-y-1/2 -left-7 z-0 h-8 w-8 text-slate-900 bg-slate-100/70 hover:bg-slate-100/90 rounded-full text-[clamp(1.5rem_,_3vw_,_2rem)] shadow-md'/>
       </button>
       )
 
@@ -132,25 +55,24 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
                cssEase="linear"
             >
                {CarouselImage.length > 0 ? (
-                  Carousel?.map((car, id) => (
+                  CarouselImage?.map((car, id) => (
                      <div
                         className={`min-h-full h-full aspect-video overflow-hidden rounded-2xl bg-gray-500/90`}
                         key={id}
                      >
-                        <img
-                           src={car.src}
-                           alt={car.alt}
-                           className="min-h-full aspect-video"
-                        />
+                        <img src={car.src} alt={car.alt} title={car?.alt} className=" w-full h-full aspect-video object-cover object-center"/>
                      </div>
                   ))
                ) : (
                   [0,0,0,0].map((e,id)=>
                      <div
-                  className={`min-h-full h-full aspect-video overflow-hidden rounded-2xl bg-gray-500/90 grid place-content-center`}
                   key={id}
                >
-                  sem imagens identificadas</div>)
+                  <div
+                  className={`h-full aspect-video overflow-hidden rounded-2xl bg-gray-500/90 flex items-center justify-center `}
+                  key={id}
+               >
+                  sem imagens identificadas</div></div>)
 
                )}
             </Slider>
@@ -390,3 +312,14 @@ export function CarouselImage({ CarouselImage }: ColorProp) {
 //       </div>
 //    );
 // }
+
+
+/// Alguns dos nossos estudantes e educadores
+
+/// Visita pedagógica ao Museu do Cordel
+
+/// Professores
+
+/// Aniversário da escola Há mais de 50 anos transmitindo conhecimento ajudando. na construção do cidadão
+
+/// Nossa fachada Agora EREM Antônio Inácio

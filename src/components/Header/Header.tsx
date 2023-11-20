@@ -17,9 +17,9 @@ export function Header() {
             </div>
          </section>
 
-         <div className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full bg-black bg-opacity-20 dark:bg-opacity-25 shadow-md backdrop-blur-[1px] fixed top-0 left-0 z-10" />
+         <div className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full bg-black/30 shadow-md backdrop-blur-[2px] fixed top-0 left-0 z-20" />
 
-         <header className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full fixed top-0 left-0 z-10 flex items-center justify-center ">
+         <header className="h-[clamp(3.5rem_,_10vw_,_4.5rem)] w-full fixed top-0 left-0 z-50 flex items-center justify-center ">
             <nav className="max-w-6xl w-full h-full flex items-center justify-between px-[min(1rem_,_3%)] relative">
                <Link
                   href={'/'}
@@ -33,7 +33,7 @@ export function Header() {
                   />
                </Link>
                <SearchHeader />
-               <div>
+               <div className='z-10'>
                   <NavMenu />
                </div>
             </nav>

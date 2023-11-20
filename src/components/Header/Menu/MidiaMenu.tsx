@@ -14,7 +14,7 @@ export function MidiaMenu({ toggle, SocialValues = [] }: MidiaMenuProps) {
 
    return (
       <div
-         className={`w-full transition-all duration-300 bg-white/[35%] overflow-hidden `}
+         className={`w-full transition-all duration-300 bg-white/[35%] overflow-hidden z-10`}
          style={{
             height: `${toggle ? SocialValuesLength * 2.25 + 'rem' : '0rem'}`,
          }}
